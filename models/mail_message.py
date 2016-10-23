@@ -33,24 +33,44 @@ _mylog = logging.getLogger('YUSTAS##############################################
 class note_note(models.Model):
     _inherit = 'note.note'
     
-    messs_ids = fields.Many2many('mail.message','messs_notesss_rel')
+    mess_id = fields.Many2one('mail.message', string='Created from:')
+    
+    @api.multi
+    def open_mess(self):
+        if self.mess_id:
+#             return {
+#                 'type': 'ir.actions.act_window',
+#                 'view_type': 'form',
+#                 'view_mode': 'form',
+#                 'res_model': 'mail.message',
+#                 'res_id': self.mess_id.id,
+#                 "views": [[False, "form"]],
+#                 }
+            return {
+                'type': 'ir.actions.act_window',
+                'view_type': 'search',
+                'view_mode': 'search',
+                'res_model': 'mail.message',
+                'res_id': self.mess_id.id,
+                "views": [[False, "form"]],
+               } 
+    
 
 class mail_message(models.Model):
 #class mail_message(osv.Model):
 
     _inherit = 'mail.message'
 
-    note_ids = fields.Many2many('note.note','messs_notesss_rel')
+    #note_ids = fields.Many2many('note.note','messs_notesss_rel')
     
     @api.multi
     def create_note(self):
 #    @api.cr_uid_context
 #    def create_note(self, cr, uid, ids=None, attachment_ids=[], context=None):
         _mylog.info('Need to create NOTE!')
-        self.res_id = self.env['note.note'].create({'name':self.subject, 'memo':self.body})
-        self.type = "comment"
-        self.model = 'note.note'
-        return True
+        self.res_id = self.env['note.note'].create({'name':self.subject, 'memo':self.body, 'mess_id':self.id})
+#        self.type = "comment"
+#        self.model = 'note.note'
 
 #     def _get_date(self, cr, uid, date, context=None):
 #         new_date = ''

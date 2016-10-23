@@ -1,10 +1,12 @@
-openerp.mail_extended = function(openerp) {
+openerp.mess_to_note = function(openerp) {
+//openerp.mail_extended = function(openerp) {
     var _t = openerp.web._t;
     var initial_mode = "view"
     var QWeb = openerp.web.qweb;
 
     openerp.mail.ThreadMessage.include({
         bind_events: function () {
+//        bind_events_note: function () {
             var self = this;
             this._super();
             // header icons bindings

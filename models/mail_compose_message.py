@@ -28,7 +28,7 @@ class mail_compose_message(osv.TransientModel):
     _inherit = 'mail.compose.message'
 
     _columns = {
-        'note_id': fields.Many2one('note.note'),
+        'note_id': fields.many2one('note.note'),
 #        'fwd_message': fields.boolean('Forward Message'),
     }
     _defaults = {

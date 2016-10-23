@@ -2,7 +2,8 @@
 <templates id="template" xml:space="preserve">
     <t t-extend="mail.thread.message">
         <t t-jquery=".oe_msg_center .oe_msg_icons .oe_reply" t-operation="before">
-            <span class='oe_msg_forward'><a title="Forward" ><i class='fa fa-share' /></a></span>
+            <span class='oe_msg_create_note'><a title="Create note" ><i class='fa fa-share' /></a></span>
+            <!-- <span class='oe_msg_forward'><a title="Forward" ><i class='fa fa-share' /></a></span> -->
         </t>
     </t>
 </templates>

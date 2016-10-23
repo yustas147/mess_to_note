@@ -8,7 +8,8 @@ openerp.mail_extended = function(openerp) {
             var self = this;
             this._super();
             // header icons bindings
-            this.$el.find('.oe_msg_forward').on('click', this.on_create_note);
+            this.$el.find('.oe_msg_create_note').on('click', this.on_create_note);
+//            this.$el.find('.oe_msg_forward').on('click', this.on_create_note);
 //            this.$el.find('.oe_msg_forward').on('click', this.on_forward_message);
         },
         on_create_note: function (default_composition_mode) {

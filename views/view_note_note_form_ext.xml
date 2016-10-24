@@ -8,6 +8,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='memo']" position='after'>
+                    <field name="mess_id"/>
                     <button name="open_mess" type='object' string='Open coorr mess'/>
                 </xpath>
             </field>

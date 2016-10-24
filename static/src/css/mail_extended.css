@@ -1,5 +1,5 @@
 .openerp .oe_mail .oe_msg .oe_msg_icons .oe_msg_create_note {
-    margin-top: 20%;
+    margin-top: 0%;
 }
 .openerp .oe_mail .oe_msg .oe_msg_icons .oe_msg_create_note:hover a {
     color: #1fc0ff;

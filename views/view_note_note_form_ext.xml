@@ -7,9 +7,9 @@
             <field name="inherit_id" ref="note.view_note_note_form"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='memo']" position='after'>
-                    <field name="mess_id"/>
-                    <button name="open_mess" type='object' string='Open coorr mess'/>
+                <xpath expr="//field[@name='stage_id']" position='before'>
+                    <button name="open_mess" type='object' string='Open coorr mess' attrs="{'invisible':[('mess_id', '=', False)]}"/>
+                     <field name="mess_id" invisible="1"/> 
                 </xpath>
             </field>
         </record>

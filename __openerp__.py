@@ -28,7 +28,6 @@
     'depends': ['mail','note'],
     'data': [
         'views/templates.xml',
-        'views/mail_compose_message_view.xml',
         'views/view_note_note_form_ext.xml'
     ],
     'qweb': ['static/src/xml/mail_extended.xml'],
